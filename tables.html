@@ -6,50 +6,226 @@
     <title>Sabre Stone Commercial</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header with Logo and Navigation -->
-    <header>
+    <!-- Include the header -->
+    <div id="header"></div>
+    <script>
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header').innerHTML = data);
+    </script>
 
-        <div class="top-title">
-            Sabre Stone Commercial
+    <!-- Hero Section -->
+    <div class="hero-row">
+        <section class="hero hero-tablepage">
+            <h1>Bespoke Luxury Tables</h1>
+        </section>
+    </div>
+
+    <!-- 3 Image Section -->
+    <section class="section-wtext">
+        <div class="container">
+            <h2>Table Uses</h2>
+            <div class="section-gallery">
+                <div class="gallery-item">
+                    <img src="table777x777-image1.jpg" alt="Project 1 - Custom Restaurant Tables">
+                    <h3>Dining Spaces</h3>
+                    <p>Elegant and durable custom tables, crafted to enhance the dining experience in hotels and restaurants. From intimate settings to grand dining halls, our tables are designed to elevate the ambiance while withstanding the demands of high-traffic areas.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="bar-photo.jpg" alt="Project 2 - Office Cladding and Worktops">
+                    <h3>Bar & Lounge Areas</h3>
+                    <p>Bespoke bar tops and tables, tailored to fit the style and functionality of hotel lounges and bar areas. Our heat and scratch-proof Laminam Porcelain ensures long-lasting beauty and resilience, perfect for busy social settings.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="conference-table.jpg" alt="Project 3 - Hotel Lobby Cladding">
+                    <h3>Meeting & Conference Rooms</h3>
+                    <p>Stylish and practical tables designed for corporate meeting rooms and event spaces. With versatile designs and customizable features, our tables offer both sophistication and durability to create a professional and inviting atmosphere.</p>
+                </div>
+            </div>
         </div>
-        
-        <nav>
-            <img src="https://www.sabrestone.co.uk/wp-content/uploads/2024/02/weybridge-logo-300x2252-1.svg" alt="Sabre Stone Logo" class="logo">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="tables.html"class="active">Tables</a></li>
-                <li><a href="#">Worktops</a></li>
-                <li><a href="#">Panelling</a></li>
-                <li><a href="#">Company</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2024 Sabre Stone Commercial. All rights reserved.</p>
-        </footer>
-        
-        <script>
-            window.onscroll = function() {
-                var topHeader = document.querySelector(".top-title");
-                
-                // Debugging: Check if scroll event fires
-                console.log("Scroll position: ", window.scrollY);
-                
-                if (window.scrollY > 50) {
-                    topHeader.classList.add("hidden");
-                } else {
-                    topHeader.classList.remove("hidden");
-                }
-            };
-        </script>
-        
+    <!-- About Section -->
+    <div class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>Bespoke Tables</h2>
+                <p>At Sabre Stone Commercial, we create bespoke tables from high-quality Laminam Porcelain, designed to elevate the atmosphere of any hotel or restaurant. Our tables are known for their exceptional durability, being both scratch and heat-proof to withstand high-traffic environments. With custom designs tailored to your specific needs, we offer elegant dining tables, stylish bar tops, and unique pieces for lounges and meeting spaces—combining aesthetics with functionality to make a lasting impression.</p>
+                <p>We work closely with clients from initial consultation through to delivery, ensuring every table is tailored to fit perfectly within its intended space. Using only the finest materials, our tables are crafted to meet the highest standards of durability and design.</p>
+                <p>Our range of edge styles allows you to choose a finish that complements your space, with each design offering a unique look. At Sabre Stone Commercial, our bespoke solutions are all about realizing your design vision with quality and precision.</p>
+            </div>
+            <div class="about-image">
+                <img src="black-gold-table.jpg" alt="Luxury Table Image">
+            </div>
+        </div>
+    </div>
     
-    </body>
+  
+    <section class="colours-section" style="background-color: #ffffff">
+        <div class="container">
+            
+            <!-- Section Heading -->
+            <h2>Stocked Porcelain Colours</h2>
+            
+            <!-- Colours Grid -->
+            <div class="colours-grid">
+                <!-- Colour 1 -->
+                <div class="colour-card">
+                    <img src="verdi-alpi.jpg" alt="Laminam Verdi Alpi">
+                    <h3>Verdi Alpi</h3>
+                </div>
+                
+                <!-- Colour 2 -->
+                <div class="colour-card">
+                    <img src="nero-greco.jpg" alt="Laminam Nero Greco">
+                    <h3>Nero Greco</h3>
+                </div>
+                
+                <!-- Colour 3 -->
+                <div class="colour-card">
+                    <img src="arabescato.jpg" alt="Laminam Arabescato">
+                    <h3>Arabescato</h3>
+                </div>
+                
+                <!-- Colour 4 -->
+                <div class="colour-card">
+                    <img src="noir-desir.jpg" alt="Laminam Noir Desir">
+                    <h3>Noir Desir</h3>
+                </div>
+                
+                <!-- Colour 5 -->
+                <div class="colour-card">
+                    <img src="calacatta-black.jpg" alt="Laminam Calacatta Black">
+                    <h3>Calacatta Black</h3>
+                </div>
+
+                            <!-- Colour 6 -->
+                <div class="colour-card">
+                    <img src="diamond-cream.jpg" alt="Laminam Diamond Cream">
+                    <h3>Diamond Cream</h3>
+                </div>
+                
+                <!-- Colour 7 -->
+                <div class="colour-card">
+                    <img src="calacatta-michelangelo.jpg" alt="Laminam Calacatta Michelangelo">
+                    <h3>Calacatta Michelangelo</h3>
+                </div>
+                
+                <!-- Colour 8 -->
+                <div class="colour-card">
+                    <img src="calacatta-mediceo.jpg" alt="Laminam Calacatta Mediceo">
+                    <h3>Calacatta Mediceo</h3>
+                </div>
+                
+                <!-- Colour 9 -->
+                <div class="colour-card">
+                    <img src="onice-grigio.jpg" alt="Laminam Onice Grigio">
+                    <h3>Onice Grigio</h3>
+                </div>
+                
+                <!-- Colour 10 -->
+                <div class="colour-card">
+                    <img src="terre-di-pompei-natural.jpg" alt="Laminam Terre Di Pompei Natural">
+                    <h3>Terre Di Pompei Natural</h3>
+                </div>
+            </div> <!-- End of Colours Grid -->
+            
+        </div>
+    </section>
     
-    </html>
+    <!-- Edging Colours Section -->
+    <section class="colours-section">
+        <div class="container">
+            <h2>Edging And Leg Colours</h2>
+            <div class="colours-grid">
+   
+                <!-- Colour 2 -->
+                <div class="colour-card">
+                    <img src="brass-colour.jpg" alt="Cream">
+                    <h3>Brushed Brass</h3>
+                </div>
+    
+                <!-- Colour 3 -->
+                <div class="colour-card">
+                    <img src="antique-brass.jpg" alt="Grey">
+                    <h3>Antique Brass</h3>
+                </div>
+    
+                <!-- Colour 4 -->
+                <div class="colour-card">
+                    <img src="antique-dark.jpg" alt="Black">
+                    <h3>Iron</h3>
+                </div>
+    
+                <!-- Colour 5 -->
+                <div class="colour-card">
+                    <img src="copper.jpg" alt="Brushed Copper">
+                    <h3>Brushed Copper</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Extra Section -->
+        <div class="about-section" style="background-color: #ffffff">
+            <div class="container">
+                <div class="about-content">
+                    <h2>More Colours Are Available</h2>
+                    <p>We offer a wide range of Porcelain colors to suit different design preferences and project requirements. If you're looking for a specific color, more options are available upon request. Please note that non-stocked colors are subject to minimum order quantities.</p>
+                    <a href="contact.html">
+                        <button class="btn">Contact Us Today</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    <!-- Include Flickity JS and CSS from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2.2.1/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2.2.1/dist/flickity.pkgd.min.js"></script>
+
+    <!-- Flickity HTML init with images -->
+    <div class="gallery js-flickity"
+    data-flickity='{ "wrapAround": true, "autoPlay": true, "pauseAutoPlayOnHover": false }'>
+    
+        <div class="gallery-cell">
+            <img src="table-hero2.jpg" alt="Image 1">
+        </div>
+        <div class="gallery-cell">
+            <img src="table-hero2.jpg" alt="Image 2">
+        </div>
+        <div class="gallery-cell">
+            <img src="table-hero2.jpg" alt="Image 3">
+        </div>
+        <div class="gallery-cell">
+            <img src="table-hero2.jpg" alt="Image 4">
+        </div>
+        <div class="gallery-cell">
+            <img src="table-hero2.jpg" alt="Image 5">
+        </div>
+    
+    </div>
+
+    <script src="main.js"></script>
+
+    <script>
+        // Use fetch to load the header.html file
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header').innerHTML = data);
+    </script>
+
+    <!-- Include the footer -->
+    <div id="footer"></div>
+    <script>
+        fetch('footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+
+</body>
+
+</html>

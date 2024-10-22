@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabre Stone Commercial</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Include the header -->
+    <div id="header"></div>
+    <script>
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header').innerHTML = data);
+    </script>
+
+    <!-- Hero Section -->
+    <div class="hero-row">
+        <section class="hero hero-worktoppage">
+            <h1>Fitted Worktops</h1>
+        </section>
+    </div>
+
+    <!-- About Section -->
+    <div class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>Worktop Service</h2>
+                <p>At Sabre Stone Commercial, we create bespoke worktops from premium materials like porcelain, quartz, and granite. Our designs blend elegance and durability, catering to both hospitality and domestic needs. With a focus on tailored solutions, we offer a range of styles to enhance any space.</p>
+                <p>From consultation to fitting, our expert team manages every step to ensure each worktop meets your design vision and withstands high-traffic environments. Whether it’s a hotel bar, restaurant, or private kitchen, our worktops provide both visual appeal and lasting performance.</p>
+                <p>Our porcelain worktops resist scratches and heat, while our quartz and granite options offer timeless beauty and durability. By combining quality materials with skilled craftsmanship, we create worktops that seamlessly elevate your space.</p>
+            </div>
+            <div class="about-image">
+                    <img src="laminam-worktop.jpg" alt="Laminam worktop">
+            </div>
+        </div>
+    </div>
+
+    <!-- 3 Image Section -->
+    <section class="section-wtext">
+        <div class="container">
+            <h2>Materials</h2>
+            <div class="section-gallery">
+                <div class="gallery-item">
+                    <img src="laminam-worktop-2.jpg" alt="Laminam Worktop">
+                    <h3>Porcelain</h3>
+                    <p>Porcelain worktops offer exceptional durability and elegance. Resistant to heat, scratches, and stains, they are an ideal choice for busy kitchens and sophisticated dining spaces. Their sleek design and variety of finishes make them perfect for both hospitality and home environments.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="quartz.jpg" alt="Quartz Worktop">
+                    <h3>Quartz</h3>
+                    <p>Our quartz worktops combine strength and beauty with minimal maintenance. Engineered for consistency, quartz surfaces are non-porous and highly resistant to spills, making them an excellent fit for bars, kitchens, and high-traffic areas requiring a stylish yet practical solution.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="granite-worktop-1.jpg" alt="Granite Worktop">
+                    <h3>Granite</h3>
+                    <p>Granite worktops provide timeless appeal and unmatched durability. Each slab is unique, with natural patterns that add character to any setting. Perfect for creating a refined look, granite is an enduring choice for both modern and classic spaces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- About Section -->
+    <div class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>Commercial Use</h2>
+                <p>Our commercial worktops are crafted to meet the demands of busy hospitality settings like restaurants, bars, and hotel kitchens. Using top-quality materials such as porcelain, quartz, and granite, these worktops are built to handle heavy use while maintaining their visual appeal. We provide bespoke solutions tailored to your design and functional needs. From consultation to installation, our process ensures precision, durability, and seamless integration into your commercial space. With features like heat and scratch resistance, our worktops offer beauty and resilience, enhancing the atmosphere in high-traffic areas.</p>
+                <h2>Domestic Use</h2>
+                <p>For domestic spaces, our worktops blend elegance with everyday practicality. Whether for your kitchen, bathroom, or dining area, we offer a variety of materials and finishes to complement your home’s style. Each worktop is custom-made to fit your specifications, achieving a perfect mix of style and function. Our expert team handles everything, from material selection to installation, ensuring a flawless finish that enhances your space. With easy maintenance and durable performance, our worktops bring lasting value to your home while delivering sophisticated, modern aesthetics.</p>
+            </div>
+            <div class="about-image">
+                    <img src="laminam-worktop-3.jpg" alt="Laminam worktop">
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Flickity JS and CSS from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2.2.1/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2.2.1/dist/flickity.pkgd.min.js"></script>
+
+    <!-- Flickity HTML init with images -->
+    <div class="gallery js-flickity"
+    data-flickity='{ "wrapAround": true, "autoPlay": true, "pauseAutoPlayOnHover": false }'>
+    
+        <div class="gallery-cell">
+            <img src="table-hero2.jpg" alt="Image 1">
+        </div>
+        <div class="gallery-cell">
+            <img src="table-hero2.jpg" alt="Image 2">
+        </div>
+        <div class="gallery-cell">
+            <img src="table-hero2.jpg" alt="Image 3">
+        </div>
+        <div class="gallery-cell">
+            <img src="table-hero2.jpg" alt="Image 4">
+        </div>
+        <div class="gallery-cell">
+            <img src="table-hero2.jpg" alt="Image 5">
+        </div>
+    
+    </div>
+
+    <script src="main.js"></script>
+
+    <script>
+        // Use fetch to load the header.html file
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header').innerHTML = data);
+    </script>
+
+    <!-- Include the footer -->
+    <div id="footer"></div>
+    <script>
+        fetch('footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+
+</body>
+
+</html>
