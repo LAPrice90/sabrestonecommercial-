@@ -50,6 +50,14 @@ header {
     width: 100%;
 }
 
+.contact-heading {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 /* Top Title */
 .top-title {
     background-color: #1D1D1F; /* Dark gray */
@@ -637,7 +645,12 @@ footer {
     .colours-grid {
         grid-template-columns: repeat(2, 1fr); /* Set to two columns on mobile */
     }
+    .colour-card {
+        min-height: 280px; /* Reduce the minimum height for smaller screens */
+    }
 }
+
+
 
 /* Colour Card */
 .colour-card {
@@ -651,7 +664,9 @@ footer {
 
 .colour-card img {
     width: 100%;
-    height: auto;
+    height: auto; /* Keep the height auto to maintain aspect ratio */
+    aspect-ratio: 1 / 1; /* Force the images to stay square */
+    object-fit: cover; /* Ensures images fill the container without distortion */
     border-radius: 8px;
     margin-bottom: 15px;
 }
@@ -737,3 +752,125 @@ footer {
         width: 100%; /* Adjust the image height for smaller screens */
     }
 }
+
+/* --------------------------------------------  Contact Form  --------------------------------------------  */
+/* Contact Section Styles */
+.contact-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  
+  /* Contact Details and Form Widths */
+  .contact-details {
+    flex-basis: 45%;
+    padding-right: 20px;
+  }
+  
+  .contact-form {
+    flex-basis: 50%;
+    min-width: 300px;
+  }
+  
+  /* Contact Section Heading */
+.contact-section {
+    padding: 60px 20px; /* Adjust as needed */
+  }
+  
+  .contact-section h2 {
+    margin-top: 0; /* Reset any unexpected margins */
+    padding-top: 20px; /* Optional, adjust as needed for consistency */
+    padding-bottom: 20px; /* Optional, adjust as needed for consistency */
+  }
+  
+
+  /* Contact Info Item Styles */
+  .contact-info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px; /* Increase margin for spacing between sections */
+  }
+  
+  .contact-info-item .icon {
+    background-color: #1D1D1F;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px; /* Spacing between icon and text */
+    flex-shrink: 0; /* Prevent the icon from shrinking */
+  }
+
+  .contact-info-item h3, .contact-info-item p {
+    text-align: left; /* Ensure the text aligns left */
+  }
+
+  .contact-info-item h3 {
+    margin: 0 0 5px; /* Add bottom margin for spacing between heading and paragraph */
+    font-size: 1.1rem;
+    color: #1D1D1F;
+  }
+
+  .contact-info-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .contact-info-item h3 {
+    font-size: 1.1rem;
+    color: #1D1D1F;
+    margin: 0;
+    text-align: left; /* Ensure text aligns to the left */
+  }
+  
+  .contact-info-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    text-align: left; /* Ensure text aligns to the left */
+  }
+  
+  /* Fix Alignment of Icons and Text */
+  .contact-info-item .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Adjust Web Form Height */
+  .contact-form iframe {
+    height: 500px;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .contact-info {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .contact-details, .contact-form {
+      flex-basis: 100%;
+      padding-right: 0;
+    }
+  
+    .contact-info-item {
+      justify-content: center;
+      flex-direction: row;
+    }
+  
+    .contact-info-item .icon {
+      margin-right: 10px;
+      margin-bottom: 0;
+    }
+  }
+  
+  
