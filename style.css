@@ -656,7 +656,9 @@ footer {
 
 .colour-card img {
     width: 100%;
-    height: auto;
+    height: auto; /* Keep the height auto to maintain aspect ratio */
+    aspect-ratio: 1 / 1; /* Force the images to stay square */
+    object-fit: cover; /* Ensures images fill the container without distortion */
     border-radius: 8px;
     margin-bottom: 15px;
 }
