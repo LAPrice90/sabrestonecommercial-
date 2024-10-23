@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add the "active" class to the corresponding nav link
         if (currentPage.includes('index.html') || currentPage === '/') {
             document.getElementById('home-link').classList.add('active');
-        } else if (currentPage.includes('about.html')) {
-            document.getElementById('about-link').classList.add('active');
+        } else if (currentPage.includes('company.html')) {
+            document.getElementById('company-link').classList.add('active');
         } else if (currentPage.includes('cladding.html')) {
-            document.getElementById('panelling-link').classList.add('active');
+            document.getElementById('cladding-link').classList.add('active');
         } else if (currentPage.includes('contact.html')) {
             document.getElementById('contact-link').classList.add('active');
         } else if (currentPage.includes('worktops.html')) {

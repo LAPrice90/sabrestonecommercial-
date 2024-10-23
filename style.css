@@ -135,6 +135,10 @@ nav ul li a:hover {
     background-image: url('table-hero2.jpg');
 }
 
+.hero-cladpage{
+    background-image: url('cladding-hero.jpg');
+}
+
 .hero-worktoppage{
     background-image: url('worktop-hero.jpg');
 }
@@ -330,6 +334,24 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .section-gallery {
+        flex-direction: column; /* Make the items stack vertically */
+        align-items: center; /* Center the items horizontally */
+    }
+
+    .gallery-item {
+        flex-basis: 100%; /* Make each item take full width */
+        margin-bottom: 20px; /* Adjust spacing between items */
+    }
+
+    .gallery-item img {
+        width: 90%; /* Keep the images slightly smaller than full width */
+        height: auto;
+    }
+}
+
 /* --------------------------------------------  4 text points with Headers - No image  --------------------------------------------  */
 
 .section-four-box {
@@ -377,38 +399,42 @@ nav ul li a:hover {
 
 
 * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  
-  body { 
-    font-family: sans-serif; 
-  }
-  
-  /* Gallery container */
-  .gallery {
+/* General Styles for the gallery */
+.gallery {
     background: #EEE;
-    width: 100%;
-    height: 500px; /* Set the height of the gallery */
+    width: 100%; /* Full width of the viewport */
+    height: 500px; /* Keep your preferred height */
+    overflow: hidden; /* Prevent overflow on narrow screens */
   }
   
-  /* Carousel cells */
+  /* Gallery cells - default desktop view */
   .gallery-cell {
-    width: 66%; /* Adjust based on how much of the screen width each cell should occupy */
+    width: 66%; /* Set for larger screens */
     height: 500px; /* Set the height of each carousel cell */
-    margin-right: 15px; /* Keep 15px of white space between each slide */
+    margin-right: 15px; /* White space between images */
     position: relative;
     background-color: #ffffff;
   }
   
-  /* Ensure the images fill the gallery cell without being cut off */
+  /* Images in the gallery cells */
   .gallery-cell img {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 100%; /* Make image fill the cell */
+    height: 100%; /* Make image fill the cell height */
     object-fit: cover; /* Ensures the image covers the entire cell without distortion */
     border-radius: 0; /* Remove any rounding if present */
   }
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    /* Apply the full-width image and white gap effect only on mobile */
+    .gallery-cell {
+      width: 98%; /* Slightly smaller than full width to allow a gap between images */
+      height: 500px; /* Set the height of each carousel cell */
+      margin: 0 1%; /* Use margin to create an even white gap on both sides */
+    }
+  }
+  
   
   
 
@@ -606,6 +632,13 @@ footer {
     gap: 20px;
 }
 
+/* Mobile view - Two tiles per row */
+@media (max-width: 768px) {
+    .colours-grid {
+        grid-template-columns: repeat(2, 1fr); /* Set to two columns on mobile */
+    }
+}
+
 /* Colour Card */
 .colour-card {
     background-color: #fff;
@@ -634,6 +667,7 @@ footer {
 }
 
 
+/* --------------------------------------------  Text with image right  --------------------------------------------  */
 
 /* About Section */
 .about-section {
@@ -699,6 +733,7 @@ footer {
     }
 
     .about-image img {
-        height: 300px; /* Adjust the image height for smaller screens */
+        height: 500px;
+        width: 100%; /* Adjust the image height for smaller screens */
     }
 }
