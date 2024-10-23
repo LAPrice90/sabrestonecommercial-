@@ -637,7 +637,12 @@ footer {
     .colours-grid {
         grid-template-columns: repeat(2, 1fr); /* Set to two columns on mobile */
     }
+    .colour-card {
+        min-height: 280px; /* Reduce the minimum height for smaller screens */
+    }
 }
+
+
 
 /* Colour Card */
 .colour-card {
