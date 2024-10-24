@@ -530,11 +530,18 @@ footer {
 .signup-form button {
     padding: 10px 15px;
     font-size: 14px;
-    background-color: #000;
-    color: white;
-    border-radius: 5px;
-    border: none;
+    background-color: #000; /* Black background */
+    color: white; /* White text */
+    border-radius: 5px; /* Rounded corners */
+    border: none; /* No border */
+    transition: background-color 0.2s, transform 0.1s; /* Transition effects */
 }
+
+.signup-form button:active {
+    background-color: #333; /* Darker gray when clicked */
+    transform: scale(0.95); /* Slightly reduce size */
+}
+
 
 /* Social Icons */
 .social-icons {
