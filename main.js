@@ -77,3 +77,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select the form and add an event listener for the submit event
+        document.querySelector('.contact-form-wrapper form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Hide the inputs and text area
+            const form = this; // Reference to the form
+            form.style.display = 'none'; // Hide the entire form
+
+            // Create and display the thank you message
+            const thankYouMessage = document.createElement('p');
+            thankYouMessage.textContent = 'Thank you, our sales team will get in touch with you as soon as possible.';
+            thankYouMessage.style.color = '#ffffff'; // Set the text color
+            thankYouMessage.style.textAlign = 'center'; // Center align the message
+
+            // Append the thank you message to the form wrapper
+            const wrapper = document.querySelector('.contact-form-wrapper');
+            wrapper.appendChild(thankYouMessage); // Add the message below the form
+        });
+    });
+
+</script>

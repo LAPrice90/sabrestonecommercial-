@@ -512,30 +512,40 @@ footer {
 }
 
 .signup-form {
-    display: flex;
-    justify-content: center; /* Center the input and button */
-    align-items: center;
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center items in the container */
+    align-items: center; /* Align items vertically */
     margin-bottom: 20px;
+    width: 100%; /* Full width for the form container */
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .signup-form input {
-    padding: 10px;
-    font-size: 14px;
-    width: 60%; /* Adjust width for the input field */
-    margin-right: 15px;
+    padding: 12px;
+    font-size: 16px;
+    flex: 1; /* Allow the input to take up available space */
+    margin-right: 10px; /* Space between input and button */
     border-radius: 5px;
-    border: none;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    min-width: 200px; /* Optional: Set a minimum width for the input */
+    width: 60%;
 }
 
 .signup-form button {
-    padding: 10px 15px;
-    font-size: 14px;
-    background-color: #000; /* Black background */
-    color: white; /* White text */
-    border-radius: 5px; /* Rounded corners */
-    border: none; /* No border */
-    transition: background-color 0.2s, transform 0.1s; /* Transition effects */
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #000;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent button text from wrapping */
+    flex-shrink: 0; /* Prevent button from shrinking */
 }
+
+
+
 
 .signup-form button:active {
     background-color: #333; /* Darker gray when clicked */
@@ -916,3 +926,51 @@ footer {
     }
   }
   
+
+  .contact-form-wrapper {
+    background-color: #1D1D1F; /* Dark background for the form section */
+    border-radius: 5px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+                0 10px 10px rgba(0, 0, 0, 0.22);
+    width: 768px; /* Set a fixed width */
+    max-width: 100%; /* Ensure responsiveness */
+    padding: 20px; /* Add some padding around the form */
+    margin: 0 auto; /* Center the form section */
+    height: auto; /* Allow the height to adjust based on content */
+}
+
+.contact-form-wrapper h2 {
+    text-align: center; /* Center the headlines */
+    font-size: 2rem; /* Keep the font size */
+    margin-bottom: 1rem; /* Space below the headings */
+    color: #ffffff; /* White text for the heading */
+}
+
+.contact-form-wrapper p {
+    color: #ffffff; /* White text for the required asterisk notice */
+}
+
+input, textarea {
+    background-color: #ffffff; /* Light background for inputs */
+    border: none; /* No border for a clean look */
+    padding: 12px 15px; /* Padding inside input fields */
+    margin: 8px 0; /* Space between inputs */
+    width: 100%; /* Full width for inputs */
+    font-size: inherit; /* Inherit font size from body */
+    font-family: inherit; /* Inherit font family from body */
+    color: #000; /* Dark text for input fields for readability */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+    line-height: normal; /* Reset line-height to normal for consistency */
+    background-color: #ffffff; /* Light background for inputs */
+}
+
+input:focus, textarea:focus {
+    outline: 1px solid #00b4cf; /* Outline on focus */
+}
+
+form p {
+    text-align: left; /* Align paragraph text to the left */
+}
