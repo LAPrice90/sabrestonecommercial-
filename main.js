@@ -78,15 +78,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Select the form and add an event listener for the submit event
-        document.querySelector('.contact-form-wrapper form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
 
-            // Hide the inputs and text area
-            const form = this; // Reference to the form
-            form.style.display = 'none'; // Hide the entire form
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.contact-form-wrapper form');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Collect form data
+        const formData = new FormData(form);
+
+        // Send data to Google Apps Script using fetch
+        fetch("https://script.google.com/macros/s/AKfycbyVxNYiX4TLRAcwAaSy0WU2lCrNJ3l-spA1mkGQc9nwkySFXnXy_gkKXFMsXUu1aj7_tQ/exec", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(responseText => {
+            // Hide the form
+            form.style.display = 'none';
 
             // Create and display the thank you message
             const thankYouMessage = document.createElement('p');
@@ -97,7 +107,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Append the thank you message to the form wrapper
             const wrapper = document.querySelector('.contact-form-wrapper');
             wrapper.appendChild(thankYouMessage); // Add the message below the form
-        });
+        })
+        .catch(error => console.error('Error:', error));
     });
+});
 
-</script>
