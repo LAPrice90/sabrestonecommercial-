@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    
+    <meta property="og:title" content="Sabre Stone Commercial" />
+    <meta property="og:description" content="At Sabre Stone Commercial, our mission is to create bespoke, high-quality solutions that elevate commercial spaces." />
+    <meta property="og:image" content="https://sabrestonecommercial.co.uk/restaurant-brassbase-landscape.jpg" />
+    <meta property="og:url" content="https://sabrestonecommercial.co.uk" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sabre Stone Commercial" />
+    <meta name="twitter:description" content="At Sabre Stone Commercial, our mission is to create bespoke, high-quality solutions that elevate commercial spaces." />
+    <meta name="twitter:image" content="https://sabrestonecommercial.co.uk/restaurant-brassbase-landscape.jpg" />
+    
 </head>
 <body>
 
@@ -67,7 +81,6 @@
   
     <section class="colours-section" style="background-color: #ffffff">
         <div class="container">
-            
             <!-- Section Heading -->
             <h2>Stocked Porcelain Colours</h2>
             
@@ -102,8 +115,8 @@
                     <img src="calacatta-black.jpg" alt="Laminam Calacatta Black">
                     <h3>Calacatta Black</h3>
                 </div>
-
-                            <!-- Colour 6 -->
+    
+                <!-- Colour 6 -->
                 <div class="colour-card">
                     <img src="diamond-cream.jpg" alt="Laminam Diamond Cream">
                     <h3>Diamond Cream</h3>
@@ -136,6 +149,7 @@
             
         </div>
     </section>
+    
     
     <!-- Edging Colours Section -->
     <section class="colours-section">
@@ -218,13 +232,14 @@
     
     </div>
 
-    <script src="main.js"></script>
-
     <script>
-        // Use fetch to load the header.html file
         fetch('header.html')
         .then(response => response.text())
-        .then(data => document.getElementById('header').innerHTML = data);
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+            highlightActivePage(); // Call to highlight the active page
+        })
+        .catch(error => console.error('Error loading header:', error));
     </script>
 
     <!-- Include the footer -->
@@ -232,8 +247,14 @@
     <script>
         fetch('footer.html')
         .then(response => response.text())
-        .then(data => document.getElementById('footer').innerHTML = data);
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+            initializeSignupForm(); // Call to initialize the signup form after footer is loaded
+        })
+        .catch(error => console.error('Error loading footer:', error));
     </script>
+
+    <script src="main.js"></script>
 
 </body>
 

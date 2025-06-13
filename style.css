@@ -9,6 +9,15 @@ body {
     text-align: center;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body, html {
+    overflow-x: hidden;
+}
+
 h1, h2, h3 {
     font-weight: 400;
     margin: 0 0 20px;
@@ -135,6 +144,27 @@ nav ul li a:hover {
     color: #94742f; /* Pure white text on hover */
     background-color: transparent; /* Remove background color on hover */
     transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Responsive Navigation Adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-wrap: wrap; /* Allows the items to wrap into two rows */
+        justify-content: center;
+        padding: 0;
+    }
+
+    nav ul li {
+        width: 30%; /* Each item takes up approximately half the width */
+        margin: 15px 0; /* Add vertical margin between items */
+        text-align: center; /* Center the text */
+    }
+
+    nav ul li a {
+        padding: 15px 20px; /* Increase padding for easier tapping */
+        font-size: 1.2em; /* Increase font size slightly for readability */
+    }
 }
 
 /* --------------------------------------------  Hero  --------------------------------------------  */
@@ -482,29 +512,46 @@ footer {
 }
 
 .signup-form {
-    display: flex;
-    justify-content: center; /* Center the input and button */
-    align-items: center;
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center items in the container */
+    align-items: center; /* Align items vertically */
     margin-bottom: 20px;
+    width: 100%; /* Full width for the form container */
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .signup-form input {
-    padding: 10px;
-    font-size: 14px;
-    width: 60%; /* Adjust width for the input field */
-    margin-right: 15px;
+    padding: 12px;
+    font-size: 16px;
+    flex: 1; /* Allow the input to take up available space */
+    margin-right: 10px; /* Space between input and button */
     border-radius: 5px;
-    border: none;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    min-width: 200px; /* Optional: Set a minimum width for the input */
+    width: 60%;
 }
 
 .signup-form button {
-    padding: 10px 15px;
-    font-size: 14px;
+    padding: 12px 20px;
+    font-size: 16px;
     background-color: #000;
     color: white;
     border-radius: 5px;
     border: none;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent button text from wrapping */
+    flex-shrink: 0; /* Prevent button from shrinking */
 }
+
+
+
+
+.signup-form button:active {
+    background-color: #333; /* Darker gray when clicked */
+    transform: scale(0.95); /* Slightly reduce size */
+}
+
 
 /* Social Icons */
 .social-icons {
@@ -615,16 +662,16 @@ footer {
 
 /* --------------------------------------------  Colour Swatch 5x  --------------------------------------------  */
 
+* {
+    box-sizing: border-box;
+}
+
+
 /* Porcelain Colours Section */
 .colours-section {
     padding: 60px 20px;
     background-color: #f9f9f9;
     text-align: center;
-}
-
-.colours-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .colours-section h2 {
@@ -633,24 +680,14 @@ footer {
     color: #333;
 }
 
-/* Colours Grid */
 .colours-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
+    width: 100%; /* Ensure the grid stretches full width */
+    padding: 0; /* Remove unnecessary padding that might cause overflow */
+    margin: 0; /* Remove default margins */
 }
-
-/* Mobile view - Two tiles per row */
-@media (max-width: 768px) {
-    .colours-grid {
-        grid-template-columns: repeat(2, 1fr); /* Set to two columns on mobile */
-    }
-    .colour-card {
-        min-height: 280px; /* Reduce the minimum height for smaller screens */
-    }
-}
-
-
 
 /* Colour Card */
 .colour-card {
@@ -664,11 +701,18 @@ footer {
 
 .colour-card img {
     width: 100%;
-    height: auto; /* Keep the height auto to maintain aspect ratio */
-    aspect-ratio: 1 / 1; /* Force the images to stay square */
-    object-fit: cover; /* Ensures images fill the container without distortion */
+    height: auto;
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+    object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
+}
+
+.colours-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 .colour-card h3 {
@@ -732,26 +776,27 @@ footer {
     border-radius: 8px; /* Rounded corners */
 }
 
-/* Responsive Design for Smaller Screens */
+/* About Section Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Stack the text and image vertically */
+    .about-section .container {
+        flex-direction: column; /* Stack text and image vertically only in the About section */
     }
 
     .about-content {
-        text-align: center; /* Center the text on smaller screens */
+        text-align: center; /* Center text only in the About section */
     }
 
     .about-image {
-        margin-top: 20px; /* Add space between text and image */
-        max-width: 100%; /* Ensure the image takes full width on small screens */
+        margin-top: 20px; /* Space between text and image in About section */
+        max-width: 100%; /* Full width image in smaller screens */
     }
 
     .about-image img {
-        height: 500px;
-        width: 100%; /* Adjust the image height for smaller screens */
+        height: 500px; /* Height adjustment for smaller screens */
+        width: 100%; /* Full width adjustment for smaller screens */
     }
 }
+
 
 /* --------------------------------------------  Contact Form  --------------------------------------------  */
 /* Contact Section Styles */
@@ -844,33 +889,88 @@ footer {
     justify-content: center;
     align-items: center;
   }
+
+    /* Adjust Web Form Height */
+    .contact-form iframe {
+        height: 600px;
+      }
   
-  /* Adjust Web Form Height */
-  .contact-form iframe {
-    height: 500px;
-  }
-  
-  /* Mobile Styles */
-  @media (max-width: 768px) {
+/* Mobile Styles */
+@media (max-width: 768px) {
     .contact-info {
       flex-direction: column;
-      text-align: center;
+      align-items: flex-start; /* Align items to the left */
+      padding: 0 10px; /* Add padding if necessary */
     }
   
     .contact-details, .contact-form {
-      flex-basis: 100%;
+      flex-basis: 100%; /* Full width */
       padding-right: 0;
+      padding-left: 0; /* Remove side padding */
+      width: 100%; /* Ensure full width for both elements */
+      box-sizing: border-box; /* Include padding within the width */
     }
   
     .contact-info-item {
-      justify-content: center;
+      justify-content: flex-start; /* Align items to the left */
       flex-direction: row;
+      width: 100%; /* Ensure the items occupy full width */
     }
   
     .contact-info-item .icon {
       margin-right: 10px;
-      margin-bottom: 0;
+    }
+  
+    .contact-info-item h3, .contact-info-item p {
+      text-align: left; /* Left align the text */
     }
   }
   
-  
+
+  .contact-form-wrapper {
+    background-color: #1D1D1F; /* Dark background for the form section */
+    border-radius: 5px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+                0 10px 10px rgba(0, 0, 0, 0.22);
+    width: 768px; /* Set a fixed width */
+    max-width: 100%; /* Ensure responsiveness */
+    padding: 20px; /* Add some padding around the form */
+    margin: 0 auto; /* Center the form section */
+    height: auto; /* Allow the height to adjust based on content */
+}
+
+.contact-form-wrapper h2 {
+    text-align: center; /* Center the headlines */
+    font-size: 2rem; /* Keep the font size */
+    margin-bottom: 1rem; /* Space below the headings */
+    color: #ffffff; /* White text for the heading */
+}
+
+.contact-form-wrapper p {
+    color: #ffffff; /* White text for the required asterisk notice */
+}
+
+input, textarea {
+    background-color: #ffffff; /* Light background for inputs */
+    border: none; /* No border for a clean look */
+    padding: 12px 15px; /* Padding inside input fields */
+    margin: 8px 0; /* Space between inputs */
+    width: 100%; /* Full width for inputs */
+    font-size: inherit; /* Inherit font size from body */
+    font-family: inherit; /* Inherit font family from body */
+    color: #000; /* Dark text for input fields for readability */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+    line-height: normal; /* Reset line-height to normal for consistency */
+    background-color: #ffffff; /* Light background for inputs */
+}
+
+input:focus, textarea:focus {
+    outline: 1px solid #00b4cf; /* Outline on focus */
+}
+
+form p {
+    text-align: left; /* Align paragraph text to the left */
+}

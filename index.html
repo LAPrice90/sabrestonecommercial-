@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sabre Stone Commercial</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon-black.png" sizes="32x32" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="favicon-white.png" sizes="32x32" media="(prefers-color-scheme: dark)">
+    <meta property="og:title" content="Sabre Stone Commercial" />
+    <meta property="og:description" content="At Sabre Stone Commercial, our mission is to create bespoke, high-quality solutions that elevate commercial spaces." />
+    <meta property="og:image" content="https://sabrestonecommercial.co.uk/restaurant-brassbase-landscape.jpg" />
+    <meta property="og:url" content="https://sabrestonecommercial.co.uk" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sabre Stone Commercial" />
+    <meta name="twitter:description" content="At Sabre Stone Commercial, our mission is to create bespoke, high-quality solutions that elevate commercial spaces." />
+    <meta name="twitter:image" content="https://sabrestonecommercial.co.uk/restaurant-brassbase-landscape.jpg" />
+
 </head>
 <body>
 
@@ -31,7 +46,7 @@
         <section class="hero hero-worktops">
             <h1>Worktops</h1>
             <p>Quartz, Granite and Porcelain worktops for Commerical or Domestic use.</p>
-            <a href="Worktops.html">
+            <a href="worktops.html">
                 <button class="btn">Explore Worktops</button>
             </a>
         </section>
@@ -39,7 +54,7 @@
         <section class="hero hero-cladding">
             <h1>Cladding</h1>
             <p>Porcelain stoneware is ideal for cladding walls thanks to its strength, durability, and easy cleaning.</p>
-            <a href="Cladding.html">
+            <a href="cladding.html">
                 <button class="btn">Explore Cladding</button>
             </a>
         </section>
@@ -121,40 +136,41 @@
     <div class="gallery js-flickity"
     data-flickity='{ "wrapAround": true, "autoPlay": true, "pauseAutoPlayOnHover": false }'>
     
-    <div class="gallery-cell">
-        <img src="car1.jpg" alt="Image 1">
-    </div>
-    <div class="gallery-cell">
-        <img src="car2.jpg" alt="Image 2">
-    </div>
-    <div class="gallery-cell">
-        <img src="car3.jpg" alt="Image 3">
-    </div>
-    <div class="gallery-cell">
-        <img src="car8.jpg" alt="Image 8">
-    </div>
-    <div class="gallery-cell">
-        <img src="car9.jpg" alt="Image 9">
-    </div>
-    <div class="gallery-cell">
-        <img src="car11.jpg" alt="Image 11">
-    </div>
-    <div class="gallery-cell">
-        <img src="car13.jpg" alt="Image 13">
-    </div>
-    <div class="gallery-cell">
-        <img src="car15.jpg" alt="Image 15">
-    </div>
+        <div class="gallery-cell">
+            <img src="car1.jpg" alt="Image 1">
+        </div>
+        <div class="gallery-cell">
+            <img src="car2.jpg" alt="Image 2">
+        </div>
+        <div class="gallery-cell">
+            <img src="car3.jpg" alt="Image 3">
+        </div>
+        <div class="gallery-cell">
+            <img src="car8.jpg" alt="Image 8">
+        </div>
+        <div class="gallery-cell">
+            <img src="car9.jpg" alt="Image 9">
+        </div>
+        <div class="gallery-cell">
+            <img src="car11.jpg" alt="Image 11">
+        </div>
+        <div class="gallery-cell">
+            <img src="car13.jpg" alt="Image 13">
+        </div>
+        <div class="gallery-cell">
+            <img src="car15.jpg" alt="Image 15">
+        </div>
     
     </div>
 
-    <script src="main.js"></script>
-
     <script>
-        // Use fetch to load the header.html file
         fetch('header.html')
         .then(response => response.text())
-        .then(data => document.getElementById('header').innerHTML = data);
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+            highlightActivePage(); // Call to highlight the active page
+        })
+        .catch(error => console.error('Error loading header:', error));
     </script>
 
     <!-- Include the footer -->
@@ -162,8 +178,14 @@
     <script>
         fetch('footer.html')
         .then(response => response.text())
-        .then(data => document.getElementById('footer').innerHTML = data);
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+            initializeSignupForm(); // Call to initialize the signup form after footer is loaded
+        })
+        .catch(error => console.error('Error loading footer:', error));
     </script>
+
+    <script src="main.js"></script>
 
 </body>
 
